@@ -4,6 +4,7 @@ import org.apache.kafka.clients.producer.*;
 import org.pipeline.models.LocationRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import java.time.Instant;
 import java.util.Properties;
 import com.fasterxml.jackson.databind.JsonNode;
 
@@ -40,7 +41,7 @@ public class LocationRecordProducer {
             if (results != null && results.isArray()) {
                 for (JsonNode record : results) {
                     LocationRecord locationRecord = LocationRecord.builder()
-                            .datetime(record.get("datetime").get("utc").asText())
+                            .datetime(Instant.parse(record.get("datetime").get("utc").asText()))
                             .value((float) record.get("value").asDouble())
                             .sensorsId(record.get("sensorsId").asInt())
                             .locationsId(record.get("locationsId").asInt())
@@ -49,15 +50,15 @@ public class LocationRecordProducer {
                             .build();
 
                     String recordJson = objectMapper.writeValueAsString(locationRecord);
-                    ProducerRecord<String, String> a_record = new ProducerRecord<>("events", recordJson);
+                    ProducerRecord<String, String> a_record = new ProducerRecord<>("air-quality-records", recordJson);
                     myProducer.send(a_record, new Callback() {
                         @Override
                         public void onCompletion(RecordMetadata recordMetadata, Exception e) {
                             if (e!=null){
-                                System.out.println("❌ Adding event failed: " + e.getMessage());
+                                System.out.println("❌ Adding record failed: " + e.getMessage());
                             }else{
-                                System.out.println("✅ Event created " + recordJson);
-                                System.out.println("✅ Event created to " + recordMetadata.topic() +
+                                System.out.println("✅ Record created " + recordJson);
+                                System.out.println("✅ Record created to " + recordMetadata.topic() +
                                         " : partition " + recordMetadata.partition() +
                                         " : at offset " + recordMetadata.offset());
                             }
