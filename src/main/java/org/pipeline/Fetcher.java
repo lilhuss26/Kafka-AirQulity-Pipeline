@@ -1,4 +1,5 @@
-package org.kafka;
+package org.pipeline;
+
 import java.net.URI;
 import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
