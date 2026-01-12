@@ -4,13 +4,14 @@ import org.apache.kafka.clients.producer.*;
 import org.pipeline.models.LocationRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import java.time.Instant;
 import java.util.Properties;
 import com.fasterxml.jackson.databind.JsonNode;
 
 public class LocationRecordProducer {
     private Producer <String, String> myProducer;
-    private ObjectMapper objectMapper = new ObjectMapper();
+    private ObjectMapper objectMapper = new ObjectMapper().registerModule(new JavaTimeModule());
     private Fetcher fetcher = new Fetcher();
     public String all_records;
     public LocationRecordProducer(){
@@ -70,6 +71,8 @@ public class LocationRecordProducer {
         } catch (Exception e) {
             System.err.println("Error processing records: " + e.getMessage());
             e.printStackTrace();
+        }finally {
+            myProducer.close();
         }
     }
 }
