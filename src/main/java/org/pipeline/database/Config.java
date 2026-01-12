@@ -1,13 +1,7 @@
 package org.pipeline.database;
 
-import java.time.Instant;
-import java.util.stream.Stream;
 import io.github.cdimascio.dotenv.Dotenv;
 import com.influxdb.v3.client.InfluxDBClient;
-import com.influxdb.v3.client.Point;
-import com.influxdb.v3.client.query.QueryOptions;
-import com.influxdb.v3.client.query.QueryType;
-import com.influxdb.v3.client.write.WriteOptions;
 
 public class Config {
     private Dotenv dotenv = Dotenv.load();

@@ -16,6 +16,4 @@ public class LocationRecord {
     private int locationsId; // tags
     private double latitude; // tags
     private double longitude; // tags
-
 }
-
