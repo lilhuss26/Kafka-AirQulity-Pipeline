@@ -1,6 +1,6 @@
 package org.pipeline;
 
-import org.pipeline.database.Insert;
+import org.pipeline.database.Influx.InfluxInsert;
 import org.pipeline.models.LocationRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.consumer.Consumer;
@@ -18,7 +18,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 public class InfluxConsumer {
     private Consumer<String, String> myConsumer;
     private ObjectMapper objectMapper;
-    private Insert insertor = new Insert();
+    private InfluxInsert insertor = new InfluxInsert();
+
     public InfluxConsumer() {
         Properties consumerConfig = new Properties();
         consumerConfig.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092");
@@ -32,6 +33,7 @@ public class InfluxConsumer {
 
         myConsumer.subscribe(Collections.singletonList("air-quality-records"));
     }
+
     public void startConsuming(){
         System.out.println("🟢 Consumer is running and subscribed to air-quality-records topic");
         try{

@@ -1,14 +1,14 @@
-package org.pipeline.database;
+package org.pipeline.database.Influx;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import com.influxdb.v3.client.InfluxDBClient;
 
-public class Config {
+public class InfluxConfig {
     private Dotenv dotenv = Dotenv.load();
     private final char[] authToken;
     private InfluxDBClient client;
 
-    public Config() {
+    public InfluxConfig() {
         this.authToken = dotenv.get("INFLUXDB_TOKEN").toCharArray();
         String hostUrl = "https://us-east-1-1.aws.cloud2.influxdata.com";
         try{

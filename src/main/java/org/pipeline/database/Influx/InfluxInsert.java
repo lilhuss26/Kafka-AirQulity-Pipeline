@@ -1,12 +1,12 @@
-package org.pipeline.database;
+package org.pipeline.database.Influx;
 
 import com.influxdb.v3.client.InfluxDBClient;
 import org.pipeline.models.LocationRecord;
 import com.influxdb.v3.client.Point;
 import com.influxdb.v3.client.write.WriteOptions;
 
-public class Insert {
-    private Config config = new Config();
+public class InfluxInsert {
+    private InfluxConfig config = new InfluxConfig();
     private InfluxDBClient client = config.getClient();
     private String db = "Air-Qulity";
 
