@@ -8,3 +8,9 @@
 | `so2`     | Sulfur dioxide                                        |
 | `bc`      | Black carbon                                          |
 ![img.png](img.png)
+from(bucket: "Air-Qulity")
+|> range(start: v.timeRangeStart, stop: v.timeRangeStop)
+|> filter(fn: (r) =>
+r._measurement == "air-quality" and
+r._field == "value"
+)
