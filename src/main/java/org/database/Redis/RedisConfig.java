@@ -1,4 +1,4 @@
-package org.pipeline.database.Redis;
+package org.database.Redis;
 
 import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;

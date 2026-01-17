@@ -1,4 +1,7 @@
-package org.pipeline;
+package org;
+
+import org.pipeline.consumers.InfluxConsumer;
+import org.pipeline.producers.LocationRecordProducer;
 
 import java.util.concurrent.CountDownLatch;
 

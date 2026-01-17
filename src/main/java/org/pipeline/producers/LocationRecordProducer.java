@@ -1,7 +1,7 @@
-package org.pipeline;
+package org.pipeline.producers;
 
 import org.apache.kafka.clients.producer.*;
-import org.pipeline.models.LocationRecord;
+import org.models.LocationRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;

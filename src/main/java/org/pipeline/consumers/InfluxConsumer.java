@@ -1,7 +1,7 @@
-package org.pipeline;
+package org.pipeline.consumers;
 
-import org.pipeline.database.Influx.InfluxInsert;
-import org.pipeline.models.LocationRecord;
+import org.database.Influx.InfluxInsert;
+import org.models.LocationRecord;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.clients.consumer.Consumer;
 import org.apache.kafka.clients.consumer.ConsumerConfig;

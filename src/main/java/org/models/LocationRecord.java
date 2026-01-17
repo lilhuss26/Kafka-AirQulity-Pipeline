@@ -1,4 +1,4 @@
-package org.pipeline.models;
+package org.models;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;

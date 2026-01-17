@@ -1,7 +1,7 @@
-package org.pipeline.database.Influx;
+package org.database.Influx;
 
 import com.influxdb.v3.client.InfluxDBClient;
-import org.pipeline.models.LocationRecord;
+import org.models.LocationRecord;
 import com.influxdb.v3.client.Point;
 import com.influxdb.v3.client.write.WriteOptions;
 

@@ -1,4 +1,4 @@
-package org.pipeline;
+package org.pipeline.producers;
 
 import java.net.URI;
 import java.net.http.HttpClient;

@@ -1,4 +1,4 @@
-package org.pipeline.database.Influx;
+package org.database.Influx;
 
 import io.github.cdimascio.dotenv.Dotenv;
 import com.influxdb.v3.client.InfluxDBClient;
