@@ -2,7 +2,7 @@
 
 A real-time data streaming pipeline for processing air quality data using Apache Kafka, with multiple storage backends and visualization capabilities.
 
-## 🏗️ Architecture
+## Architecture
 
 ![Untitled-2026-01-02-2329.png](src/test/Untitled-2026-01-02-2329.png)
 The pipeline ingests air quality data from OpenAQ, streams it through Kafka, and distributes it to multiple consumers for different purposes:
@@ -20,7 +20,7 @@ The pipeline ingests air quality data from OpenAQ, streams it through Kafka, and
 - **ETL Pipeline**: PySpark-based ETL for data warehouse integration (coming soon)
 - **Scalable Design**: Kafka-based architecture for horizontal scaling
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Core Technologies
 - **Java 17**: Main application runtime
@@ -44,7 +44,7 @@ The pipeline ingests air quality data from OpenAQ, streams it through Kafka, and
 - **dotenv-java**: Environment variable management
 - **SLF4J**: Logging framework
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 Kafka-AirQulity-Pipeline/
@@ -61,7 +61,7 @@ Kafka-AirQulity-Pipeline/
 └── README.md
 ```
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -99,7 +99,7 @@ Kafka-AirQulity-Pipeline/
    mvn clean install
    ```
 
-## 📊 Grafana Dashboard Setup
+## Grafana Dashboard Setup
 
 1. **Add InfluxDB as a data source in Grafana**
    - Navigate to Configuration → Data Sources
@@ -117,7 +117,7 @@ Kafka-AirQulity-Pipeline/
    - Geographic maps for sensor locations
    - Alert status indicators
 
-## 🔄 PySpark ETL Pipeline (Coming Soon)
+## PySpark ETL Pipeline (Coming Soon)
 
 The PySpark ETL component will:
 - Read data from Kafka topics
@@ -159,7 +159,7 @@ docker logs -f kafka
 6. **Grafana**: Queries InfluxDB for real-time dashboard visualization
 7. **PySpark ETL**: Processes data for data warehouse storage (future)
 
-## 🔧 Configuration
+## Configuration
 
 ### Kafka Configuration
 - **Bootstrap Servers**: `localhost:9092`
@@ -171,29 +171,29 @@ docker logs -f kafka
 - `influxdb-consumer-group`: InfluxDB consumer
 - `redis-consumer-group`: Redis consumer
 
-## 🧪 Testing
+## Testing
 
 Run unit tests:
 ```bash
 mvn test
 ```
 
-## 📈 Monitoring
+## Monitoring
 
 - **Kafka**: Monitor through JMX metrics or Kafka Manager
 - **InfluxDB**: Built-in monitoring UI
 - **Redis**: Use Redis CLI or Redis Insight
 - **Grafana**: Custom dashboards for application metrics
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License.
 
-## 🔗 Resources
+## Resources
 
 - [Apache Kafka Documentation](https://kafka.apache.org/documentation/)
 - [InfluxDB Documentation](https://docs.influxdata.com/)
@@ -201,6 +201,6 @@ This project is licensed under the MIT License.
 - [OpenAQ API](https://openaq.org/)
 - [Apache Spark Documentation](https://spark.apache.org/docs/latest/)
 
-## 📧 Contact
+## Contact
 
 For questions or support, please open an issue in the repository.
