@@ -10,7 +10,7 @@ The pipeline ingests air quality data from OpenAQ, streams it through Kafka, and
 - **Redis**: Fast access to alerts and latest records
 - **Apache Spark**: ETL processing for data warehouse storage
 
-## 📋 Features
+## Features
 
 - **Real-time Data Streaming**: Continuous ingestion of air quality data from OpenAQ API
 - **Multi-Consumer Architecture**: Parallel processing with InfluxDB and Redis consumers
